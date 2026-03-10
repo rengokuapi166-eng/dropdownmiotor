@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motor Classic</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: 
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+       url("chopper.jpg") center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* NAVBAR */
+nav {
+    background: #333;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li:hover {
+    background: #555;
+}
+
+/* DROPDOWN */
+.dropdown-content {
+    display: block;
+    position: absolute;
+    background: #444;
+    min-width: 150px;
+    top: 100%;
+    left: 0;
+    z-index: 999;
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+nav ul li:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.3s;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    display: block;
+    color: white;
+}
+
+/* SECTION */
+section {
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s ease;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card {
+    background: rgba(40,30,20,0.9);
+    color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+}
+
+.motor-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.motor-text {
+    flex: 1;
+}
+
+.motor-img {
+    flex: 1;
+}
+
+.motor-img img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* zig zag */
+.reverse {
+    flex-direction: row-reverse;
+}
+
+/* SLIDER */
+.slider {
+    text-align: center;
+}
+
+.slider img {
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    object-fit: contain;
+    object-position: center;
+    background: rgba(40,30,20,0.9);
+    border-radius: 10px;
+}
+
+/* BUTTON */
+button {
+    padding: 10px 20px;
+    border: none;
+    background: orange;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Motor Classic</h1>
+    <p>Gaya Retro yang Tak Lekang oleh Waktu</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#sejarah">Sejarah</a></li>
+        <li>
+            <a href="#">Jenis ▼</a>
+            <div class="dropdown-content">
+                <a href="#cafe">Cafe Racer</a>
+                <a href="#scrambler">Scrambler</a>
+                <a href="#chopper">Chopper</a>
+            </div>
+        </li>
+        <li><a href="#galeri">Galeri</a></li>
+    </ul>
+</nav>
+
+<section id="sejarah">
+    <div class="card">
+        <h2>Sejarah Motor Classic</h2>
+        <p>Sejarah motor klasik bermula dari penemuan Daimler Reitwagen (1885) di Jerman, berkembang melalui era dominasi pabrikan Eropa (seperti BSA, BMW) tahun 1900-1950an, hingga kejayaan motor Jepang (Honda CB750) tahun 1970an.<b>Di Indonesia</b>, motor pertama tercatat tahun 1893, dengan motor klasik umumnya merujuk pada model sebelum 1970-an</p>
+    </div>
+</section>
+
+<section id="cafe">
+    <div class="card motor-box">
+        <div class="motor-text">
+            <h2>Cafe Racer</h2>
+            <p>Motor bergaya balap klasik dengan posisi stang rendah dan desain minimalis.</p>
+        </div>
+        <div class="motor-img">
+            <img src="cafe.jpg" alt="Cafe Racer">
+        </div>
+    </div>
+</section>
+
+<section id="scrambler">
+    <div class="card motor-box reverse">
+
+        <div class="motor-text">
+            <h2>Scrambler</h2>
+            <p>Motor klasik dengan ban dual purpose dan knalpot tinggi untuk segala medan.</p>
+        </div>
+        <div class="motor-img">
+            <img src="scram.jpg" alt="scram.jpg">
+        </div>
+    </div>
+</section>
+
+<section id="chopper">
+    <div class="card motor-box">
+
+        <div class="motor-text">
+            <h2>Chopper</h2>
+            <p>Motor dengan fork panjang dan desain custom yang unik dan ikonik.</p>
+        </div>
+        <div class="motor-img">
+            <img src="chop.jpg" alt="Chopper">
+        </div>
+    </div>
+</section>
+
+<section id="galeri">
+    <div class="card slider">
+        <h2>Galeri Motor Classic</h2>
+        <img id="slide" src="https://via.placeholder.com/400x250?text=Motor+1">
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Motor Classic</p>
+</footer>
+
+<script>
+// Alert Function
+function showAlert(){
+    alert("Motor classic memang keren!");
+}
+
+// Fade-in saat scroll + saat load
+const sections = document.querySelectorAll("section");
+
+function revealSections(){
+    sections.forEach(sec => {
+        const position = sec.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+
+        if(position < screenHeight - 100){
+            sec.classList.add("show");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealSections);
+window.addEventListener("load", revealSections);
+
+// Slider otomatis
+const images = [
+"brat.jpg",
+"cip.jpg",
+"bober.jpg",
+"vespa.jpg",
+"dilan.jpg"
+];
+
+let index = 0;
+const slide = document.getElementById("slide");
+
+setInterval(() => {
+    index = (index + 1) % images.length;
+    slide.src = images[index];
+}, 3000);
+</script>
+
+</body>
+</html>
